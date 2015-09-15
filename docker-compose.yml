@@ -21,17 +21,11 @@ artifactory:
   image: jfrog-docker-registry.bintray.io/jfrog/artifactory-oss
 gitlab:
   build: gitlab
-  links:
-    - gitlabdb
-    - gitlabredis
+  dns: dnsmasq
   ports:
-    - "8443:443"
-    - "8080:80"
     - "2222:22"
-gitlabdb:
-  image: postgres
-gitlabredis:
-  image: redis
+  links:
+    - dnsmasq
 
 # sudo docker run --detach \
 #     --publish 8443:443 --publish 8080:80 --publish 2222:22 \
