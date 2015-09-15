@@ -4,6 +4,13 @@ router:
     - "80:80"
   links:
     - jenkins
+dnsmasq:
+  build: dnsmasq
+  cap_add:
+    - NET_ADMIN
+  ports:
+    - "53:53"
+    - "53:53/udp"
 jenkins:
   image: jenkins
   ports:
