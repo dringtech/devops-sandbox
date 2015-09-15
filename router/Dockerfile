@@ -5,4 +5,4 @@ FROM nginx
 MAINTAINER Giles Dring <giles@dringtech.com>
 
 ADD nginx.conf /etc/nginx/nginx.conf
-ADD jenkins gitlab /etc/nginx/sites-enabled/
+ADD jenkins gitlab confluence jira /etc/nginx/sites-enabled/

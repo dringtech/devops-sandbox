@@ -9,7 +9,7 @@ server {
   error_log /var/log/nginx/gitlab.err;
 
   location / {
-    try_files \$uri @backend;
+    try_files $uri @backend;
   }
 
   location @backend {

@@ -5,6 +5,8 @@ router:
   links:
     - gitlab
     - jenkins
+    - confluence
+    - jira
 dnsmasq:
   build: dnsmasq
   cap_add:
@@ -14,6 +16,8 @@ dnsmasq:
     - "53:53/udp"
 jenkins:
   image: jenkins
+  links:
+    - gitlab
 gitlab:
   build: gitlab
   dns: dnsmasq
@@ -23,6 +27,10 @@ gitlab:
     - dnsmasq
 artifactory:
   image: jfrog-docker-registry.bintray.io/jfrog/artifactory-oss
+jira:
+  image: cptactionhank/atlassian-jira
+confluence:
+  image: cptactionhank/atlassian-confluence
 
 # sudo docker run --detach \
 #     --publish 8443:443 --publish 8080:80 --publish 2222:22 \
