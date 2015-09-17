@@ -3,7 +3,7 @@
 ## Url on which GitLab will be reachable.
 ## For more details on configuring external_url see:
 ## https://gitlab.com/gitlab-org/omnibus-gitlab/blob/629def0a7a26e7c2326566f0758d4a27857b52a3/README.md#configuring-the-external-url-for-gitlab
-external_url 'http://e611e15f9c9d'
+external_url 'http://gitlab.devops'
 
 
 ## Note: configuration settings below are optional.
