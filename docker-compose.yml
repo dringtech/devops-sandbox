@@ -25,6 +25,12 @@ gitlab:
     - "2222:22"
   links:
     - dnsmasq
+    - ldap
+ldap:
+  image: dinkel/openldap
+  env_file: .env.ldap
+  ports:
+    - "389:389"
 artifactory:
   image: jfrog-docker-registry.bintray.io/jfrog/artifactory-oss
 jira:
