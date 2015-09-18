@@ -43,19 +43,19 @@ gitlab_rails['ldap_servers'] = YAML.load <<-'EOS' # remember to close this block
     label: 'LDAP'
     host: 'ldap'
     port: 389
-    uid: 'sAMAccountName'
+    uid: 'cn'
     method: 'plain' # "tls" or "ssl" or "plain"
     bind_dn: 'cn=admin,dc=ldap,dc=devops'
     password: 'mysecretpassword'
     active_directory: false
     allow_username_or_email_login: false
     block_auto_created_users: false
-    base: ''
+    base: 'dc=ldap,dc=devops'
     user_filter: ''
     ## EE only
-    group_base: ''
-    admin_group: ''
-    sync_ssh_keys: false
+    # group_base: ''
+    # admin_group: ''
+    # sync_ssh_keys: false
 EOS
 
 ## For setting up omniauth
