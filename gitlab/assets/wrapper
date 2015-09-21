@@ -1,0 +1,27 @@
+#!/bin/bash
+
+function sigterm_handler() {
+    echo "SIGTERM signal received, try to gracefully shutdown all services..."
+    gitlab-ctl stop
+}
+
+trap "sigterm_handler; exit" TERM
+
+function entrypoint() {
+    /opt/gitlab/embedded/bin/runsvdir-start &
+    gitlab-ctl reconfigure # will also start everything
+    gitlab-ctl tail # tail all logs
+}
+
+source_file=/assets/gitlab.rb
+target_file=/etc/gitlab/gitlab.rb
+# If `target_file` doesn't exist or
+# if `source_file` is newer than `/etc/gitlab/gitlab.rb`
+# copy `source_file` to `target_file`
+if [[ ! -e ${target_file} || ${source_file} -nt ${target_file} ]]; then
+  echo Fixing gitlab.rb file...
+	cp ${source_file} ${target_file}
+	chmod 0600 ${target_file}
+fi
+
+entrypoint
