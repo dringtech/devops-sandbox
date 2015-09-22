@@ -40,7 +40,7 @@ external_url 'http://gitlab.devops'
 gitlab_rails['ldap_enabled'] = true
 gitlab_rails['ldap_servers'] = YAML.load <<-'EOS' # remember to close this block with 'EOS' below
   main: # 'main' is the GitLab 'provider ID' of this LDAP server
-    label: 'LDAP'
+    label: 'CDEP Directory'
     host: 'ldap'
     port: 389
     uid: 'cn'
