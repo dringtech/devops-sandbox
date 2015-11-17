@@ -2,11 +2,13 @@ router:
   build: router
   ports:
     - "80:80"
+    - "443:443"
   links:
     - gitlab
     - jenkins
     - confluence
     - jira
+    - freeipa
 dnsmasq:
   build: dnsmasq
   cap_add:
@@ -31,6 +33,12 @@ ldap:
   env_file: .env.ldap
   ports:
     - "389:389"
+freeipa:
+  build: freeipa
+  hostname: freeipa.devops
+  environment:
+    PASSWORD: mysecretpassword
+    FORWARDER: 127.0.0.1
 artifactory:
   image: jfrog-docker-registry.bintray.io/jfrog/artifactory-oss
 jira:
