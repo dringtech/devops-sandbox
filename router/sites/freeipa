@@ -1,0 +1,24 @@
+upstream freeipa {
+  server freeipa:443;
+}
+
+server {
+  listen 80;
+  listen 443 ssl;
+  server_name freeipa.devops;
+  access_log /var/log/nginx/freeipa.log;
+  error_log /var/log/nginx/freeipa.err;
+
+  ssl_certificate /etc/nginx/ssl/nginx.crt;
+  ssl_certificate_key /etc/nginx/ssl/nginx.key;
+
+  location / {
+    try_files $uri @backend;
+  }
+
+  location @backend {
+    proxy_set_header X-Forwarded-Proto 'https';
+    proxy_set_header Host $server_name;
+    proxy_pass https://freeipa;
+  }
+}
