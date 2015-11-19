@@ -22,7 +22,7 @@ This project is a sandbox which I'm using to learn about DevOps tooling, and how
 
     Feel free to change any of these settings (name, disk size, network, memory) if you feel confident to.
 
-5. Ensure your machine can resolve the required hosts (see Hints and Tips [Service name resolution](#Service name resolution) section, below)
+5. Ensure your machine can resolve the required hosts (see Hints and Tips [Service name resolution](#service-name-resolution) section, below)
 
 ### Starting up
 
