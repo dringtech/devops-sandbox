@@ -12,7 +12,7 @@ This project is a sandbox which I'm using to learn about DevOps tooling, and how
 
 3. Clone the repository with the following terminal command
 
-        git clone https://github.com/dringtech/model-pipeline.git
+        git clone https://github.com/dringtech/devops-sandbox.git
 
     NB If you've already cloned on github, I assume you probably realise what you need to change, you power user, you.
 
