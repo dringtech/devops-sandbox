@@ -6,7 +6,7 @@ This project is a sandbox which I'm using to learn about DevOps tooling, and how
 
 ### One-time Prerequsites
 
-1. You'll need a working `docker` environment, including `docker-compose` and, if required `docker-machine`. This is beyond the scope of this environment, but for Mac OS X, [homebrew](http://brew.sh) is very easy `brew install docker-compose` should do it. If not, `brew install docker-compose docker docker-machine`. Actually, you might also need VirtualBox. Windows, Linux and other more esoteric platforms are left as an exercise for the reader. Sorry.
+1. You'll need a working `docker` environment, including `docker-compose` and, if required `docker-machine`. This is beyond the scope of this Readme, but for Mac OS X, [homebrew](http://brew.sh) is very easy `brew install docker-compose` should do it. If not, `brew install docker-compose docker docker-machine`. Actually, you might also need VirtualBox. Windows, Linux and other more esoteric platforms are left as an exercise for the reader. Sorry. Google exists.
 
 2. I also assume you have `git`, or else how are you going to clone the repository?
 
